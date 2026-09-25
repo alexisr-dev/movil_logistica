@@ -180,7 +180,7 @@ flutter build apk --debug
 | Rol | Correo | Contraseña |
 |---|---|---|
 | Cliente | `cliente@logistica.com` | `clave1234` |
-| Repartidor | `repartidor@logistica.com` | _completar_ |
+| Repartidor | `repartidor@logistica.com` | `clave1234` |
 
 <details>
 <summary><strong>Dispositivo físico (APK en el teléfono)</strong></summary>
