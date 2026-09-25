@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Perfil de RELEASE: solo HTTPS. Android bloquea el trafico en claro.
+  La variante de debug (src/debug/res/xml/) sobrescribe este archivo para
+  permitir HTTP contra el backend local durante el desarrollo.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

@@ -1,0 +1,48 @@
+name: movil_logistica
+description: App móvil (cliente y repartidor) del sistema de logística y envíos.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Traducciones de los widgets de Material/Cupertino. Viene con el SDK (no es
+  # una dependencia externa) y hace falta para que el tirador de recarga y los
+  # menús de los campos de texto salgan en español, como el resto de la app.
+  flutter_localizations:
+    sdk: flutter
+  dio: ^5.4.3
+  go_router: ^14.1.0
+  flutter_riverpod: ^2.5.1
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.1
+  web_socket_channel: ^2.4.5
+  flutter_secure_storage: ^9.0.0
+  intl: ^0.19.0
+  geolocator: ^11.0.0
+  # Solo para POST_NOTIFICATIONS (Android 13+): geolocator no pide ese permiso,
+  # y sin él la notificación del servicio de reparto no se muestra.
+  permission_handler: ^11.3.0
+
+dependency_overrides:
+  # 4.6.2 usa `flutter.compileSdkVersion` en su build.gradle, propiedad que el
+  # Flutter Gradle plugin solo expone a los plugins desde Flutter 3.27.
+  # Con Flutter 3.24.2 hay que quedarse en 4.6.1.
+  geolocator_android: 4.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  # Solo para pruebas: permite sustituir el GPS real por uno de mentira
+  # (`GeolocatorPlatform.instance`), que es el punto de extension que ofrece el
+  # propio paquete. Sin esto, el boton «Mi ubicacion» no se puede probar.
+  geolocator_platform_interface: ^4.2.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/

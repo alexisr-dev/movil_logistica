@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Perfil de DEBUG: permite HTTP en claro para hablar con el backend Django de
+  desarrollo (emulador via 10.0.2.2, o telefono fisico via la IP de la LAN).
+  Se aplica solo a los builds de debug; release sigue siendo HTTPS-only.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
